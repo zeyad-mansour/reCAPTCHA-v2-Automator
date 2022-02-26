@@ -35,8 +35,9 @@ def index():
             return render_template("success.html")
     return '''
     <!doctype html>
-    <title>Upload new File</title>
-    <h1>Upload new File</h1>
+    <title>Upload reCAPTCHA v2 Image</title>
+    <h1>Upload reCAPTCHA v2 Image</h1>
+    <h3>The name of the image must be named its corresponding class</h3>
     <form method=post enctype=multipart/form-data>
       <input type=file name=file>
       <input type=submit value=Upload>
