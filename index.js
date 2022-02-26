@@ -12,6 +12,7 @@ puppeteer.launch({ headless: true }).then(async browser => {
   const page = await browser.newPage()
   await page.goto('https://www.google.com/recaptcha/api2/demo')
   
+  
     //todo grab recaptcha image and class
   await page.waitForTimeout(5000)
   await page.screenshot({ path: 'testresult2.png', fullPage: true })
