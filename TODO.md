@@ -7,12 +7,12 @@
 
 
 # Notes 
-Classes that recaptcha v2 uses: 
+**Classes that recaptcha v2 uses:**
 <br>
 ["car", "motorcycle", "bus", "bicycle", "traffic light", "boat", "taxi", "fire hydrant", "tractor", "crosswalk", "chimney", "stairs", "bridge"]
 
 
-Classes in the COCO dataset: 
+**Classes in the COCO dataset:** 
 <br>
 ['person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck', 'boat', 'traffic light',
         'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse', 'sheep', 'cow',
