@@ -1,7 +1,9 @@
 import os
+#import torch
 from flask import Flask, request, render_template, flash, redirect, url_for
 from werkzeug.utils import secure_filename
 
+from detection.classfier import captcha_classifier
 
 UPLOAD_FOLDER = "uploads"
 ALLOWED_EXTENSIONS = {'jpg', 'jfif', 'jpeg', 'png'}
@@ -30,9 +32,13 @@ def index():
         if file.filename == '':
             return render_template("fail.html")
         if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
+            class_type = file.filename
+            filename = str(os.urandom(6)) + secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return render_template("success.html")
+
+            bitstring = captcha_classifier(class_type, f"uploads/{filename}")
+            return "101010101"
+            
     return '''
     <!doctype html>
     <title>Upload reCAPTCHA v2 Image</title>

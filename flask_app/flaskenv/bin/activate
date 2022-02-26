@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/zeyad/misc-flask/misc-flaskenv"
+VIRTUAL_ENV="/home/zeyad/hsiohackathon/flask_app/flaskenv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
@@ -54,8 +54,8 @@ fi
 
 if [ -z "${VIRTUAL_ENV_DISABLE_PROMPT:-}" ] ; then
     _OLD_VIRTUAL_PS1="${PS1:-}"
-    if [ "x(misc-flaskenv) " != x ] ; then
-	PS1="(misc-flaskenv) ${PS1:-}"
+    if [ "x(flaskenv) " != x ] ; then
+	PS1="(flaskenv) ${PS1:-}"
     else
     if [ "`basename \"$VIRTUAL_ENV\"`" = "__" ] ; then
         # special case for Aspen magic directories
