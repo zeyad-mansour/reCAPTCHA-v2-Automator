@@ -1,2 +1,4 @@
 images/
 node_modules/
+flask_app/detection/yolov5x.pt
+flask_app/main.sock

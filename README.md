@@ -4,9 +4,14 @@ Automates the completion of Google's reCAPTCHA v2 visual challenges.
 
 This README will be updated later.
 
+Demo can be found at [https://zeyadmansour.com/hsiohackathon](https://zeyadmansour.com/hsiohackathon).
+
 ## Installation
 
-```npm install puppeteer-extra-plugin-stealth```
+Install NPM and Node.js
+
+Run
+```node scraper.js```
 
 ## License
 
