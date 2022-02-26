@@ -37,7 +37,7 @@ def index():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
             bitstring = captcha_classifier(class_type, f"uploads/{filename}")
-            return "101010101"
+            return bitstring
             
     return '''
     <!doctype html>
