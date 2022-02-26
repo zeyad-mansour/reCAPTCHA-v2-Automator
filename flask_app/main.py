@@ -24,26 +24,20 @@ def allowed_file(filename):
 
 @app.route("/hsiohackathon", methods=['GET', 'POST'])
 def index():
-    if request.method == 'POST':
-        if 'file' not in request.files:
-            print('No file attached in request')
-            return redirect(request.url)
-        file = request.files['file']
-        if file.filename == '':
-            print('No file selected')
-            return redirect(request.url)
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            print(filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
-            path =(os.path.join(app.config['UPLOAD_FOLDER'],filename))
-            print("path :",path)	   
-            result = path.split("/")
-            filename2 = result[-1:]
-            print("fname :" ,filename2)
-            filename1 = " ".join(filename2)               
-	    	    
-    return render_template('index.html')
+    if request.method == 'GET':
+        return render_template("index.html")
+
+    f = request.files.getlist("files")
+
+    for file in f:
+        if file.read() == b"" or not allowed_file(file):
+
+            return render_template("fail.html")
+
+        file_location = app.config['UPLOAD_FOLDER'] + file.filename
+        file.save(file_location)
+
+    return render_template("success.html")
 
 if __name__ == "__main__":
     app.run()
