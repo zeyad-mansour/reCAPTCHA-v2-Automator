@@ -1,6 +1,6 @@
 import torch
 
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='yolov5x.pt', force_reload = True)
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='yolov5x.pt')
 
 img = 'test_images/bicycles.jfif'
 results = model(img)
