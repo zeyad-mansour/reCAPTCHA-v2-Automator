@@ -7,7 +7,7 @@
 
 
 # Notes 
-**Classes that recaptcha v2 uses:**
+**Classes that reCAPTCHA v2 uses:**
 <br>
 ["car", "motorcycle", "bus", "bicycle", "traffic light", "boat", "taxi", "fire hydrant", "tractor", "crosswalk", "chimney", "stairs", "bridge"]
 
