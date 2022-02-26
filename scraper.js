@@ -1,8 +1,17 @@
-const request = require("request-promise");
-const cheerio = require("cheerio");
-const puppeteer = require("puppeteer");
+import puppeteer from "puppeteer"
+import https from "https"
+import fs from "fs"
 
-const validObjects = {};
+
+const validObjects = ['person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck', 'boat', 'traffic light',
+'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse', 'sheep', 'cow',
+'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella', 'handbag', 'tie', 'suitcase', 'frisbee',
+'skis', 'snowboard', 'sports ball', 'kite', 'baseball bat', 'baseball glove', 'skateboard', 'surfboard',
+'tennis racket', 'bottle', 'wine glass', 'cup', 'fork', 'knife', 'spoon', 'bowl', 'banana', 'apple',
+'sandwich', 'orange', 'broccoli', 'carrot', 'hot dog', 'pizza', 'donut', 'cake', 'chair', 'couch',
+'potted plant', 'bed', 'dining table', 'toilet', 'tv', 'laptop', 'mouse', 'remote', 'keyboard', 'cell phone',
+'microwave', 'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear',
+'hair drier', 'toothbrush'];
 
 
 (async () => {
@@ -31,21 +40,15 @@ const validObjects = {};
     let objectType = await challengeFrame.evaluate(el => el.textContent, element)
 
     console.log(objectType)
-    let size
-    let imagesrc
-
-    if (await challengeFrame.$('rc-image-title-33') !== null) {
-        imagesrc = await challengeFrame.$$eval('.rc-image-title-33[src]');
-        size = 300
-    } else {
-        imagesrc = await challengeFrame.$$eval('.rc-image-title-44[src]');
-        size = 450
-    }
-   
-    console.log(imagesrc)
     
+    let imagesrc
+    imagesrc = await challengeFrame.$eval('.rc-image-tile-wrapper > img', img => img.src);
 
+    console.log(imagesrc)
+
+    const file = fs.createWriteStream("./images/file.jpg");
+    const request = https.get(imagesrc, function(response) {
+        response.pipe(file);
+    });
 
 })();
-
-  
