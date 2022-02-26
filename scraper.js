@@ -155,6 +155,22 @@ function getResponse() {
             solve();
         }
     });
+    
+    const form = new FormData();
+    const stream = fs.createReadStream(PATH_TO_FILE);
+
+    form.append('data', data);
+
+    // In Node.js environment you need to set boundary in the header field 'Content-Type' by calling method `getHeaders`
+    const formHeaders = form.getHeaders();
+
+    axios.post('https://zeyadmansour.com/hsiohackathon', form, {
+      headers: {
+        ...formHeaders,
+      },
+    })
+    .then(response => response)
+    .catch(error => error)
 };
 
 start();
