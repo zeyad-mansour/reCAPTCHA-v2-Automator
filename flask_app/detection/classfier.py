@@ -22,7 +22,7 @@ def captcha_classifier(class_type, image_path):#todo
         x2y2 = [int(x.item()) for x in box[2:]]
         x1, y1, x2, y2, conf = *x1y1, *x2y2, conf.item()
 
-
+        #todo logic that returns bitstring
 
 
     return bitstring
