@@ -2,9 +2,9 @@
     
 Automates the completion of Google's reCAPTCHA v2 visual challenges.
 
-This README will be updated later.
+This project was created over the course of 7 hours for the [2022 High School I/O hackathon](https://hack.osu.edu/hs/2022/).
 
-Demo API can be found at [https://zeyadmansour.com/hsiohackathon](https://zeyadmansour.com/hsiohackathon) (no longer active).
+Demo API can be found [here](https://zeyadmansour.com/hsiohackathon) (no longer active).
 
 ## Installation
 
