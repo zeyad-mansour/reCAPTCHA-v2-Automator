@@ -4,7 +4,7 @@ Automates the completion of Google's reCAPTCHA v2 visual challenges.
 
 This README will be updated later.
 
-Demo API can be found at [https://zeyadmansour.com/hsiohackathon](https://zeyadmansour.com/hsiohackathon).
+Demo API can be found at [https://zeyadmansour.com/hsiohackathon](https://zeyadmansour.com/hsiohackathon) (no longer active).
 
 ## Installation
 
